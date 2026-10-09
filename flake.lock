@@ -320,11 +320,11 @@
     "private": {
       "flake": false,
       "locked": {
-        "lastModified": 1791380747,
-        "narHash": "sha256-/kpVjquIzKiKPu4cU4POZSnjdgx2bTM8sSe0/qMvLY0=",
+        "lastModified": 1791555652,
+        "narHash": "sha256-JUAdzfFn2XdeaH2BhTr3rfFfkMeQaHwzJil9kDWcRzw=",
         "ref": "refs/heads/main",
-        "rev": "0933d2bc79ab032e11720486978d7f868b108e5d",
-        "revCount": 2,
+        "rev": "4149c5f6e271a21c0bef5aa9c8e963504a6efed7",
+        "revCount": 5,
         "type": "git",
         "url": "ssh://git@github.com/tomoyukim/dotfiles-private.git"
       },

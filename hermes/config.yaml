@@ -4,8 +4,16 @@ model:
   base_url: ''
 providers:
   local-ollama:
-    name: Private Ollama
-    api: http://${OLLAMA_HOST}:11434/v1
+    name: Local Ollama
+    api: http://${LOCAL_OLLAMA_HOST}:${LOCAL_OLLAMA_PORT}/v1
+    transport: chat_completions
+    discover_models: true
+  gpu-ollama:
+    name: GPU Ollama
+    api: http://${OLLAMA_HOST}:${OLLAMA_PORT}/v1
+    # Hermes requires a configured credential before it probes a non-standard
+    # Ollama port. The wake proxy strips Authorization before forwarding.
+    api_key: ollama
     transport: chat_completions
     discover_models: true
 database:
