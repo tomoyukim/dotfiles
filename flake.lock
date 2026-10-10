@@ -343,11 +343,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1791619508,
-        "narHash": "sha256-dBtT/pVUtjcGzscvgnUbqXI6zLcoxYmLgsb7alZQPFI=",
+        "lastModified": 1791632569,
+        "narHash": "sha256-Q4Z2BoUhSUPt8IBpWUJ2+gmYBeHvGHtltJChUussqdA=",
         "ref": "refs/heads/main",
-        "rev": "64895a881a472ab463f9766b66a9facb8bad3822",
-        "revCount": 6,
+        "rev": "fbd82e80b812c71871e6c7cb9d3f17999d6ed3e1",
+        "revCount": 11,
         "type": "git",
         "url": "ssh://git@github.com/tomoyukim/dotfiles-private.git"
       },
