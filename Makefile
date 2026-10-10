@@ -5,14 +5,14 @@ HOSTS := audrey silvie macbook
 
 .DEFAULT_GOAL := help
 
-.PHONY: help switch update-codex update-hermes $(HOSTS)
+.PHONY: help switch update-codex update-private $(HOSTS)
 
 help:
 	@printf '%s\n' \
 		'Usage:' \
 		'  make switch HOST=<host>  Switch to a host configuration' \
 		'  make update-codex       Update the Codex package input' \
-		'  make update-hermes      Update the Hermes package input' \
+		'  make update-private     Update the private configuration input' \
 		'  make <host>              Switch to a specific host configuration' \
 		'' \
 		'Available hosts: $(HOSTS)'
@@ -27,8 +27,8 @@ switch:
 update-codex:
 	nix flake update codex-nixpkgs
 
-update-hermes:
-	nix flake update hermes-agent
+update-private:
+	nix flake update private
 
 $(HOSTS):
 	@$(MAKE) switch HOST=$@

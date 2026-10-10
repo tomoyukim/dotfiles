@@ -1,4 +1,4 @@
-{ config, lib, pkgs, username, nixgl, private, codexPackage, ... }:
+{ config, lib, pkgs, username, nixgl, codexPackage, ... }:
 
 rec {
   targets.genericLinux.nixGL = lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
@@ -7,9 +7,7 @@ rec {
   };
 
   sops = {
-    defaultSopsFile = "${private}/secrets/hermes.yaml";
     age.keyFile = "${config.home.homeDirectory}/.config/sops/age/keys.txt";
-    secrets."hermes-env" = { format = "yaml"; };
   };
 
   home = {
@@ -99,8 +97,6 @@ rec {
   # Let Home Manager install and manage itself.
   programs = {
     home-manager.enable = true;
-
-    hermes-agent.enable = true;
 
 #    alacritty = import ./programs/alacritty.nix { inherit nixgl pkgs config;  };
     bash = import ./programs/bash.nix;

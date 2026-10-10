@@ -10,7 +10,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hermes-agent.inputs.nixpkgs.follows = "nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     emacs-overlay = {
       url = "github:nix-community/emacs-overlay/f1a553f7f35c88116a89832e8f6da35473d732f2"; # 2026/09/12
@@ -21,11 +20,9 @@
       flake = false;
     };
     nix-claude-code.url = "github:ryoppippi/nix-claude-code";
-    hermes-agent.url = "github:NousResearch/hermes-agent/v2026.9.14"; #v0.21.3
     sops-nix.url = "github:Mic92/sops-nix";
     private = {
       url = "git+ssh://git@github.com/tomoyukim/dotfiles-private.git";
-      flake = false;
     };
   };
 
@@ -47,7 +44,6 @@
         };
       };
       nixgl = inputs.nixgl;
-      hermes-agent = inputs.hermes-agent;
       sops-nix = inputs.sops-nix;
       mkHomeConfiguration = { host }:
         let
@@ -88,10 +84,7 @@
 
           modules = [
             ./home.nix
-            hermes-agent.homeManagerModules.default
             sops-nix.homeManagerModules.sops
-            "${inputs.private}/hermes.nix"
-            "${inputs.private}/syncthing.nix"
             hostConfig.module
           ];
         };

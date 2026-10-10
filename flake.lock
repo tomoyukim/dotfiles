@@ -58,6 +58,7 @@
     "flake-parts": {
       "inputs": {
         "nixpkgs-lib": [
+          "private",
           "hermes-agent",
           "nixpkgs"
         ]
@@ -115,8 +116,9 @@
     "hermes-agent": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "home-manager": "home-manager",
+        "home-manager": "home-manager_2",
         "nixpkgs": [
+          "private",
           "nixpkgs"
         ],
         "npm-lockfile-fix": "npm-lockfile-fix",
@@ -142,16 +144,15 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "hermes-agent",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1786487128,
-        "narHash": "sha256-ad60hrRVhH/bo3Jl1YLzO+QcS3mUNZr9LNJdzhMO2P4=",
+        "lastModified": 1789150619,
+        "narHash": "sha256-Vsgv5atXkGWOOdLOL8oQLnZSGt1h140synPfFdwbyjU=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f404edbfa4117810c96b97048299242fc50e5362",
+        "rev": "e4345d5ae8aa1def34378d2a60ac5e6e4c8fd7c1",
         "type": "github"
       },
       "original": {
@@ -163,15 +164,17 @@
     "home-manager_2": {
       "inputs": {
         "nixpkgs": [
+          "private",
+          "hermes-agent",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1789150619,
-        "narHash": "sha256-Vsgv5atXkGWOOdLOL8oQLnZSGt1h140synPfFdwbyjU=",
+        "lastModified": 1786487128,
+        "narHash": "sha256-ad60hrRVhH/bo3Jl1YLzO+QcS3mUNZr9LNJdzhMO2P4=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "e4345d5ae8aa1def34378d2a60ac5e6e4c8fd7c1",
+        "rev": "f404edbfa4117810c96b97048299242fc50e5362",
         "type": "github"
       },
       "original": {
@@ -282,6 +285,22 @@
     },
     "nixpkgs_4": {
       "locked": {
+        "lastModified": 1791456040,
+        "narHash": "sha256-H83yz/do+hjOO0uujHyH8RgtIQP2v7Mw+cLwcZK/xKc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e7439b6b14ad3cc35d05608ebca9bce01a25f5f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_5": {
+      "locked": {
         "lastModified": 1790480522,
         "narHash": "sha256-fXrm/q9klVBtVq5rGQ+XpI/dokPuSB15ZK2CZvWxXOk=",
         "owner": "NixOS",
@@ -299,6 +318,7 @@
     "npm-lockfile-fix": {
       "inputs": {
         "nixpkgs": [
+          "private",
           "hermes-agent",
           "nixpkgs"
         ]
@@ -318,13 +338,16 @@
       }
     },
     "private": {
-      "flake": false,
+      "inputs": {
+        "hermes-agent": "hermes-agent",
+        "nixpkgs": "nixpkgs_4"
+      },
       "locked": {
-        "lastModified": 1791555652,
-        "narHash": "sha256-JUAdzfFn2XdeaH2BhTr3rfFfkMeQaHwzJil9kDWcRzw=",
+        "lastModified": 1791619508,
+        "narHash": "sha256-dBtT/pVUtjcGzscvgnUbqXI6zLcoxYmLgsb7alZQPFI=",
         "ref": "refs/heads/main",
-        "rev": "4149c5f6e271a21c0bef5aa9c8e963504a6efed7",
-        "revCount": 5,
+        "rev": "64895a881a472ab463f9766b66a9facb8bad3822",
+        "revCount": 6,
         "type": "git",
         "url": "ssh://git@github.com/tomoyukim/dotfiles-private.git"
       },
@@ -336,14 +359,17 @@
     "pyproject-build-systems": {
       "inputs": {
         "nixpkgs": [
+          "private",
           "hermes-agent",
           "nixpkgs"
         ],
         "pyproject-nix": [
+          "private",
           "hermes-agent",
           "pyproject-nix"
         ],
         "uv2nix": [
+          "private",
           "hermes-agent",
           "uv2nix"
         ]
@@ -365,6 +391,7 @@
     "pyproject-nix": {
       "inputs": {
         "nixpkgs": [
+          "private",
           "hermes-agent",
           "nixpkgs"
         ]
@@ -389,8 +416,7 @@
         "dracula-tmux": "dracula-tmux",
         "emacs-overlay": "emacs-overlay",
         "flake-utils": "flake-utils",
-        "hermes-agent": "hermes-agent",
-        "home-manager": "home-manager_2",
+        "home-manager": "home-manager",
         "nix-claude-code": "nix-claude-code",
         "nixgl": "nixgl",
         "nixpkgs": "nixpkgs_3",
@@ -400,7 +426,7 @@
     },
     "sops-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_5"
       },
       "locked": {
         "lastModified": 1790498116,
@@ -449,10 +475,12 @@
     "uv2nix": {
       "inputs": {
         "nixpkgs": [
+          "private",
           "hermes-agent",
           "nixpkgs"
         ],
         "pyproject-nix": [
+          "private",
           "hermes-agent",
           "pyproject-nix"
         ]
