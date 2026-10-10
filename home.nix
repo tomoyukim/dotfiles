@@ -47,6 +47,7 @@ rec {
       dnsutils # for dig command
       whois
       # ai
+      rtk
       uv
       codexPackage
       claude-code
